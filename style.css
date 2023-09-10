@@ -10,12 +10,12 @@
 }
   
 :root {
-  --text-color: rgb(17,17,17);
-  --bg-url: white;
-  --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(0, 0, 0, 0.1);
+  --text-color: rgb(255,255,255,0.87);
+  --bg-url: rgb(17,17,17);
+  --stroke-color: rgba(255, 255, 255,);
+  --surface-color: rgba(255, 255, 255, 0.3);
+  --surface-color-hover: rgba(255, 255, 255, 0.6);
+  --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
   
@@ -247,23 +247,12 @@ footer {
 
 /* media queries */
 @media (min-width: 700px) {
-  :root {
-    --bg-url: white;
-  }
-
   .space {
     --bg-url: url(./assets/bg-desktop-space.png);
   }
 }
 
 @media (min-width: 1130px) {
-  :root {
-    --bg-url: white;
-  }
-
-  .space {
-    --bg-url: url(./assets/bg-desktop-space.png);
-  }
 
   #hero-bg img {
     display: flex;
@@ -277,13 +266,6 @@ footer {
 }
 
 @media (min-width: 1350px) {
-  :root {
-    --bg-url: white;
-  }
-
-  .space {
-    --bg-url: url(./assets/bg-desktop-space.png);
-  }
 
   #hero-bg img {
     display: flex;
@@ -297,13 +279,6 @@ footer {
 }
 
 @media (min-width: 1660px) {
-  :root {
-    --bg-url: white;
-  }
-
-  .space {
-    --bg-url: url(./assets/bg-desktop-space.png);
-  }
 
   #hero-bg img {
     display: flex;
