@@ -103,6 +103,10 @@ body * {
 
 #profile img {
   width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border: 1.5px solid var(--text-color);
+  border-radius: 5rem;
 }
   
 #profile h1 {
