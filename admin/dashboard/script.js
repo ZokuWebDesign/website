@@ -12,16 +12,6 @@ function toggleMode() {
     img.setAttribute("alt", "profile");
   }
 
-  const hero = document.querySelector("#hero-bg img");
-  if (html.classList.contains("space")) {
-    hero.setAttribute("src", "./assets/hero-bg.svg");
-    hero.setAttribute("alt", "Flying Astrounaut Animation");
-  }
-  else {
-    hero.removeAttribute("src", "./assets/hero-bg.svg");
-    hero.removeAttribute("alt", "Flying Astrounaut Animation");
-  }
-
   const pdf = document.querySelector("#pdf img");
   if (html.classList.contains("space")) {
     pdf.setAttribute("src", "./assets/pdf-icon-space.svg");
@@ -63,41 +53,3 @@ function toggleMode() {
   }
 
 }
-
-
-
-/*  HTML5 Icon & CSS3 Icon
-
-  const html5 = document.querySelector("#html5");
-  if (html.classList.contains("space")) {
-    html5.setAttribute("src", "./assets/html5-icon-space.svg");
-    html5.setAttribute("alt", "HTML5 Icon");
-  }
-  else {
-    html5.setAttribute("src", "./assets/html5-icon.svg");
-    html5.setAttribute("alt", "HTML5 Icon");
-  }
-
-  const css3 = document.querySelector("#css3");
-  if (html.classList.contains("space")) {
-    css3.setAttribute("src", "./assets/css3-icon-space.svg");
-    css3.setAttribute("alt", "CSS3 Icon");
-  }
-  else {
-    css3.setAttribute("src", "./assets/css3-icon.svg");
-    css3.setAttribute("alt", "CSS3 Icon");
-  }
-
-    Hero Image Animation
-
-  const frameHeight = 102;
-  const frames = 15;
-  const div = document.getElementById("hero-bg").children;
-  let frame = 0;
-  setInterval(function () {
-      const frameOffset = (++frame % frames) * -frameHeight;
-      div.style.backgroundPosition = "0px " + frameOffset + "px";
-  }, 100);
-
-
-*/
