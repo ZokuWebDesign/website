@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página não encontrada — Zoku Holding"
+  description="Página não encontrada no domínio institucional da Zoku Holding."
+  canonicalPath="/404.html"
+>
+  <section class="py-32 flex items-center justify-center">
+    <div class="max-w-md mx-auto px-6 text-center">
+      <span class="text-xs font-mono uppercase text-blue-400">Erro 404</span>
+      <h1 class="text-3xl font-semibold text-white mt-2">Página não encontrada</h1>
+      <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+        O endereço solicitado não existe ou foi removido do servidor institucional.
+      </p>
+      <div class="mt-8">
+        <a
+          href="/"
+          class="inline-flex items-center px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium transition-colors border border-slate-700"
+        >
+          ← Retornar à página inicial
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

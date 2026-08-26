@@ -1,0 +1,123 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+}
+
+const {
+  title = "Zoku Holding — Governança e Participações Digitais",
+  description = "Zoku Holding & Participações. Gestão estratégica, infraestrutura e governança de operações de tecnologia e presença digital no Brasil.",
+  canonicalPath = "/"
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath, Astro.site || "https://zoku.com.br").href;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zoku Holding",
+  "legalName": "Zoku Holding & Participações",
+  "url": "https://zoku.com.br",
+  "logo": "https://zoku.com.br/assets/logo/zoku.png",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio de Janeiro",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contato@zoku.com.br",
+    "contactType": "corporate"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="bg-[#08090d] text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Zoku Holding" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="min-h-screen flex flex-col justify-between bg-[#08090d] text-slate-200">
+    <!-- Institutional Top Navigation -->
+    <header class="border-b border-slate-800/80 bg-[#08090d]/90 backdrop-blur sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+          <div class="w-8 h-8 rounded bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-white tracking-widest text-sm group-hover:border-slate-500 transition-colors">
+            Z
+          </div>
+          <div class="flex flex-col">
+            <span class="font-semibold text-white tracking-tight text-base leading-tight">ZOKU</span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">Holding</span>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-6 text-sm text-slate-300 font-medium">
+          <a href="/#marcas" class="hover:text-white transition-colors">Operações</a>
+          <a href="/#governanca" class="hover:text-white transition-colors">Governança</a>
+          <a href="/#institucional" class="hover:text-white transition-colors">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Institutional Footer -->
+    <footer class="border-t border-slate-800/80 bg-[#06070a] py-12 text-sm text-slate-400">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800/60 pb-8">
+          <div>
+            <div class="flex items-center gap-2 font-semibold text-slate-200 text-base">
+              <span>Zoku Holding & Participações</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 max-w-md">
+              Estrutura corporativa de governança e gestão estratégica de ativos e operações digitais.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-6 text-xs text-slate-400 font-medium">
+            <a href="/privacidade/" class="hover:text-slate-200 transition-colors">Privacidade</a>
+            <a href="/termos/" class="hover:text-slate-200 transition-colors">Termos</a>
+            <a href="mailto:contato@zoku.com.br" class="hover:text-slate-200 transition-colors">contato@zoku.com.br</a>
+          </div>
+        </div>
+        <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+          <p>© {new Date().getFullYear()} Zoku Holding. Todos os direitos reservados.</p>
+          <p class="font-mono text-[11px] text-slate-400">Rio de Janeiro, RJ · Brasil</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
