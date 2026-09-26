@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "type": "module",
   "private": true,
-  "description": "Zoku Holding & Participações — Institutional Website",
+  "description": "ZOKU WEB DESIGN LTDA — Institutional Website",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

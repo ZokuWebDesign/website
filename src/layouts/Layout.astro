@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css';
+// "?public" makes Astro name the shared stylesheet index.*.css. Without it the file is named
+// holding.*.css after the /holding/ archive page, and every public page's HTML says "holding".
+import '../styles/global.css?public';
 
 interface Props {
   title?: string;
@@ -8,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = "Zoku Holding — Governança e Participações Digitais",
-  description = "Zoku Holding & Participações. Gestão estratégica, infraestrutura e governança de operações de tecnologia e presença digital no Brasil.",
+  title = "Zoku Web Design Ltda — Web design e desenvolvimento de software",
+  description = "ZOKU WEB DESIGN LTDA (CNPJ 51.978.533/0001-83), Rio de Janeiro. Web design, desenvolvimento de software e consultoria em tecnologia, pelas marcas Locuz, PsiAtiva e Juan Silva.",
   canonicalPath = "/"
 } = Astro.props;
 
@@ -18,8 +20,9 @@ const canonicalURL = new URL(canonicalPath, Astro.site || "https://zoku.com.br")
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Zoku Holding",
-  "legalName": "Zoku Holding & Participações",
+  "name": "Zoku",
+  "legalName": "ZOKU WEB DESIGN LTDA",
+  "taxID": "51.978.533/0001-83",
   "url": "https://zoku.com.br",
   "logo": "https://zoku.com.br/assets/logo/zoku.png",
   "description": description,
@@ -58,7 +61,7 @@ const organizationSchema = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="Zoku Holding" />
+    <meta property="og:site_name" content="Zoku" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
@@ -78,13 +81,12 @@ const organizationSchema = {
           </div>
           <div class="flex flex-col">
             <span class="font-semibold text-white tracking-tight text-base leading-tight">ZOKU</span>
-            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">Holding</span>
           </div>
         </a>
 
         <nav class="flex items-center gap-6 text-sm text-slate-300 font-medium">
-          <a href="/#marcas" class="hover:text-white transition-colors">Operações</a>
-          <a href="/#governanca" class="hover:text-white transition-colors">Governança</a>
+          <a href="/#marcas" class="hover:text-white transition-colors">Marcas</a>
+          <a href="/#governanca" class="hover:text-white transition-colors">Empresa</a>
           <a href="/#institucional" class="hover:text-white transition-colors">Contato</a>
         </nav>
       </div>
@@ -101,10 +103,10 @@ const organizationSchema = {
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800/60 pb-8">
           <div>
             <div class="flex items-center gap-2 font-semibold text-slate-200 text-base">
-              <span>Zoku Holding & Participações</span>
+              <span>ZOKU WEB DESIGN LTDA</span>
             </div>
             <p class="text-xs text-slate-400 mt-1 max-w-md">
-              Estrutura corporativa de governança e gestão estratégica de ativos e operações digitais.
+              CNPJ 51.978.533/0001-83
             </p>
           </div>
           <div class="flex flex-wrap gap-6 text-xs text-slate-400 font-medium">
@@ -114,7 +116,7 @@ const organizationSchema = {
           </div>
         </div>
         <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} Zoku Holding. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Zoku Web Design Ltda. Todos os direitos reservados.</p>
           <p class="font-mono text-[11px] text-slate-400">Rio de Janeiro, RJ · Brasil</p>
         </div>
       </div>
