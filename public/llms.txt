@@ -1,0 +1,15 @@
+# Zoku Web Design Ltda
+
+> ZOKU WEB DESIGN LTDA (CNPJ 51.978.533/0001-83), Rio de Janeiro. Web design, desenvolvimento de software e consultoria em tecnologia, pelas marcas Locuz, PsiAtiva e Juan Silva.
+
+## Páginas
+
+- [Início](https://zoku.com.br/): a empresa, suas marcas, a estrutura operacional e a correspondência institucional
+- [Privacidade](https://zoku.com.br/privacidade/): política de privacidade
+- [Termos](https://zoku.com.br/termos/): termos de uso
+
+## Marcas
+
+- [Locuz](https://locuz.com.br/): assessoria de growth
+- [PsiAtiva](https://psiativa.com.br/): processo de captação para clínicas de psicologia
+- [Juan Silva](https://juanpablosilva.com.br/): design engineering
